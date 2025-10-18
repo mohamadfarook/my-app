@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "my-app"
+        IMAGE_NAME = "myapp"
         IMAGE_TAG = "latest"
-        DOCKER_REGISTRY = "your-docker-registry.com"  // optional
+        DOCKER_REGISTRY = "https://app.docker.com/accounts/dockerpathan007"  // optional
     }
 
     stages {
@@ -36,7 +36,7 @@ pipeline {
             }
             steps {
                 script {
-                    docker.withRegistry("https://${DOCKER_REGISTRY}", 'docker-credentials-id') {
+                    docker.withRegistry("https://app.docker.com/accounts/dockerpathan007}", 'docker-credentials-id') {
                         dockerImage.push()
                     }
                 }
@@ -56,3 +56,4 @@ pipeline {
         }
     }
 }
+
